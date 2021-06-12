@@ -1,8 +1,4 @@
 {
-  "npmScope": "nrth",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -10,21 +6,179 @@
     },
     ".eslintrc.json": "*"
   },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "nrth",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "OTBjNjlmMTItZGI2NS00ODg4LTlmNWQtYmE0ZDNmNzc5M2FkfHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "main-web": {
+      "tags": [
+        "scope:main",
+        "side:frontend",
+        "framework:react",
+        "framework:nest"
+      ]
+    },
+    "main-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["main-web"]
+    },
+    "main-api": {
+      "tags": [
+        "scope:main",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "discord-web": {
+      "tags": ["scope:discord", "side:frontend", "framework:react"]
+    },
+    "discord-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["discord-web"]
+    },
+    "discord-api": {
+      "tags": [
+        "scope:discord",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "discord-bot": {
+      "tags": [
+        "scope:discord",
+        "side:backend",
+        "framework:grpc",
+        "framework:nest"
+      ]
+    },
+    "admin-web": {
+      "tags": ["scope:admin", "side:frontend", "framework:react"]
+    },
+    "admin-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["admin-web"]
+    },
+    "admin-api": {
+      "tags": [
+        "scope:admin",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "shared-passport-nrth-id": {
+      "tags": ["scope:shared", "framework:express"]
+    },
+    "shared-passport-internal": {
+      "tags": ["scope:shared", "framework:express"]
+    },
+    "shared-ui-react": {
+      "tags": ["scope:shared", "framework:react"]
+    },
+    "shared-ui-react-e2e": {
+      "tags": [],
+      "implicitDependencies": ["shared-ui-react"]
+    },
+    "id-admin": {
+      "tags": ["scope:id", "side:frontend", "framework:react"]
+    },
+    "id-admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["admin"]
+    },
+    "id-account": {
+      "tags": ["scope:id", "side:frontend", "framework:react"]
+    },
+    "id-account-e2e": {
+      "tags": [],
+      "implicitDependencies": ["account"]
+    },
+    "id-api": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "id-api-applications": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "id-api-users": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "id-api-groups": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "id-api-connections": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "id-api-templates": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest",
+        "framework:react"
+      ]
+    },
+    "id-api-auth": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "main-api-donations": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    },
+    "main-api-status": {
+      "tags": [
+        "scope:id",
+        "side:backend",
+        "framework:express",
+        "framework:nest"
+      ]
+    }
+  }
 }
