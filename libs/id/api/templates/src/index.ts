@@ -1,1 +1,1 @@
-export * from './lib/id-api-templates.module';
+export * from './lib/id-api-templates';

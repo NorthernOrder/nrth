@@ -98,65 +98,16 @@
     },
     "id-admin-e2e": {
       "tags": [],
-      "implicitDependencies": ["admin"]
+      "implicitDependencies": ["id-admin"]
     },
     "id-account": {
       "tags": ["scope:id", "side:frontend", "framework:react"]
     },
     "id-account-e2e": {
       "tags": [],
-      "implicitDependencies": ["account"]
+      "implicitDependencies": ["id-account"]
     },
     "id-api": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest"
-      ]
-    },
-    "id-api-applications": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest"
-      ]
-    },
-    "id-api-users": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest"
-      ]
-    },
-    "id-api-groups": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest"
-      ]
-    },
-    "id-api-connections": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest"
-      ]
-    },
-    "id-api-templates": {
-      "tags": [
-        "scope:id",
-        "side:backend",
-        "framework:express",
-        "framework:nest",
-        "framework:react"
-      ]
-    },
-    "id-api-auth": {
       "tags": [
         "scope:id",
         "side:backend",
@@ -179,6 +130,9 @@
         "framework:express",
         "framework:nest"
       ]
+    },
+    "id-api-templates": {
+      "tags": ["scope:id", "side:frontend", "side:backend", "framework:react"]
     }
   }
 }
