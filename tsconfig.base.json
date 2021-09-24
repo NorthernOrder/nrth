@@ -16,19 +16,19 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nrth/passport-nrth-id": ["libs/shared/passport-nrth-id/src/index.ts"],
-      "@nrth/passport-internal": ["libs/shared/passport-internal/src/index.ts"],
-      "@nrth/ui-react": ["libs/shared/ui-react/src/index.ts"],
       "@nrth/id-api-applications": ["libs/id/api/applications/src/index.ts"],
-      "@nrth/id-api-users": ["libs/id/api/users/src/index.ts"],
-      "@nrth/id-api-groups": ["libs/id/api/groups/src/index.ts"],
-      "@nrth/id-api-connections": ["libs/id/api/connections/src/index.ts"],
-      "@nrth/id-api-templates": ["libs/id/api/templates/src/index.ts"],
       "@nrth/id-api-auth": ["libs/id/api/auth/src/index.ts"],
+      "@nrth/id-api-connections": ["libs/id/api/connections/src/index.ts"],
+      "@nrth/id-api-groups": ["libs/id/api/groups/src/index.ts"],
+      "@nrth/id-api-templates": ["libs/id/api/templates/src/index.ts"],
+      "@nrth/id-api-users": ["libs/id/api/users/src/index.ts"],
+      "@nrth/id-templates": ["libs/id/api/templates/src/index.ts"],
       "@nrth/main-api-donations": ["libs/main/api/donations/src/index.ts"],
       "@nrth/main-api-status": ["libs/main/api/status/src/index.ts"],
-      "@nrth/id-templates": ["libs/id/api/templates/src/index.ts"],
-      "@nrth/nest-discord": ["libs/nest-discord/src/index.ts"]
+      "@nrth/nest-discord": ["libs/nest-discord/src/index.ts"],
+      "@nrth/passport-internal": ["libs/shared/passport-internal/src/index.ts"],
+      "@nrth/passport-nrth-id": ["libs/shared/passport-nrth-id/src/index.ts"],
+      "@nrth/ui-react": ["libs/shared/ui-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

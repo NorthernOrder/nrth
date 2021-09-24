@@ -1,7 +1,8 @@
 module.exports = {
   stories: [],
   addons: [
-    '@storybook/addon-knobs/register',
+    '@storybook/addon-essentials',
+    '@storybook/addon-knobs',
     'storybook-dark-mode',
     {
       name: '@storybook/addon-postcss',
