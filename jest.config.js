@@ -16,5 +16,6 @@ module.exports = {
     '<rootDir>/libs/main/api/donations',
     '<rootDir>/libs/main/api/status',
     '<rootDir>/libs/id/api/templates',
+    '<rootDir>/libs/nest-discord',
   ],
 };

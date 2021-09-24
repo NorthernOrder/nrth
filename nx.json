@@ -133,6 +133,9 @@
     },
     "id-api-templates": {
       "tags": ["scope:id", "side:frontend", "side:backend", "framework:react"]
+    },
+    "nest-discord": {
+      "tags": []
     }
   }
 }

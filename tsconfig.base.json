@@ -27,7 +27,8 @@
       "@nrth/id-api-auth": ["libs/id/api/auth/src/index.ts"],
       "@nrth/main-api-donations": ["libs/main/api/donations/src/index.ts"],
       "@nrth/main-api-status": ["libs/main/api/status/src/index.ts"],
-      "@nrth/id-templates": ["libs/id/api/templates/src/index.ts"]
+      "@nrth/id-templates": ["libs/id/api/templates/src/index.ts"],
+      "@nrth/nest-discord": ["libs/nest-discord/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

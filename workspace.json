@@ -911,6 +911,38 @@
           }
         }
       }
+    },
+    "nest-discord": {
+      "root": "libs/nest-discord",
+      "sourceRoot": "libs/nest-discord/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/nest-discord",
+            "tsConfig": "libs/nest-discord/tsconfig.lib.json",
+            "packageJson": "libs/nest-discord/package.json",
+            "main": "libs/nest-discord/src/index.ts",
+            "assets": ["libs/nest-discord/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nest-discord/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nest-discord"],
+          "options": {
+            "jestConfig": "libs/nest-discord/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
