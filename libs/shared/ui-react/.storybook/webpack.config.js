@@ -19,7 +19,7 @@ module.exports = async ({ config, mode }) => {
   // Found this here: https://github.com/nrwl/nx/issues/2859
   // And copied the part of the solution that made it work
 
-  const svgRuleIndex = config.module.rules.findIndex((rule) => {
+  /*   const svgRuleIndex = config.module.rules.findIndex((rule) => {
     const { test } = rule;
 
     return test.toString().startsWith('/\\.(svg|ico');
@@ -78,7 +78,7 @@ module.exports = async ({ config, mode }) => {
         },
       ],
     }
-  );
+  ); */
 
   return config;
 };
