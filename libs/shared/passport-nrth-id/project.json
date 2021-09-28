@@ -1,0 +1,34 @@
+{
+  "root": "libs/shared/passport-nrth-id",
+  "sourceRoot": "libs/shared/passport-nrth-id/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/passport-nrth-id",
+        "tsConfig": "libs/shared/passport-nrth-id/tsconfig.lib.json",
+        "packageJson": "libs/shared/passport-nrth-id/package.json",
+        "main": "libs/shared/passport-nrth-id/src/index.ts",
+        "assets": ["libs/shared/passport-nrth-id/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/shared/passport-nrth-id/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/passport-nrth-id"],
+      "options": {
+        "jestConfig": "libs/shared/passport-nrth-id/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared", "framework:express"]
+}

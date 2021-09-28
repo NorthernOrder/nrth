@@ -1,0 +1,34 @@
+{
+  "root": "libs/main/api/status",
+  "sourceRoot": "libs/main/api/status/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/main/api/status",
+        "tsConfig": "libs/main/api/status/tsconfig.lib.json",
+        "packageJson": "libs/main/api/status/package.json",
+        "main": "libs/main/api/status/src/index.ts",
+        "assets": ["libs/main/api/status/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/main/api/status/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/main/api/status"],
+      "options": {
+        "jestConfig": "libs/main/api/status/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:id", "side:backend", "framework:express", "framework:nest"]
+}

@@ -1,0 +1,34 @@
+{
+  "root": "libs/shared/passport-internal",
+  "sourceRoot": "libs/shared/passport-internal/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/passport-internal",
+        "tsConfig": "libs/shared/passport-internal/tsconfig.lib.json",
+        "packageJson": "libs/shared/passport-internal/package.json",
+        "main": "libs/shared/passport-internal/src/index.ts",
+        "assets": ["libs/shared/passport-internal/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/shared/passport-internal/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/passport-internal"],
+      "options": {
+        "jestConfig": "libs/shared/passport-internal/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared", "framework:express"]
+}

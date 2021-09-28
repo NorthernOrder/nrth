@@ -1,0 +1,29 @@
+{
+  "root": "apps/id/admin-e2e",
+  "sourceRoot": "apps/id/admin-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/id/admin-e2e/cypress.json",
+        "tsConfig": "apps/id/admin-e2e/tsconfig.e2e.json",
+        "devServerTarget": "admin:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "admin:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/id/admin-e2e/**/*.{js,ts}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["id-admin"]
+}

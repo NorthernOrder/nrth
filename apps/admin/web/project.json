@@ -1,0 +1,54 @@
+{
+  "root": "apps/admin/web",
+  "sourceRoot": "apps/admin/web",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "root": "apps/admin/web",
+        "outputPath": "dist/apps/admin/web"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "admin-web:build",
+        "dev": true,
+        "proxyConfig": "apps/admin/web/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "admin-web:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "admin-web:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/admin/web"],
+      "options": {
+        "jestConfig": "apps/admin/web/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/admin/web/**/*.{ts,tsx,js,jsx}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": ["scope:admin", "side:frontend", "framework:react"]
+}

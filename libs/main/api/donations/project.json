@@ -1,0 +1,34 @@
+{
+  "root": "libs/main/api/donations",
+  "sourceRoot": "libs/main/api/donations/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/main/api/donations",
+        "tsConfig": "libs/main/api/donations/tsconfig.lib.json",
+        "packageJson": "libs/main/api/donations/package.json",
+        "main": "libs/main/api/donations/src/index.ts",
+        "assets": ["libs/main/api/donations/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/main/api/donations/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/main/api/donations"],
+      "options": {
+        "jestConfig": "libs/main/api/donations/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:id", "side:backend", "framework:express", "framework:nest"]
+}

@@ -1,0 +1,34 @@
+{
+  "root": "libs/id/api/templates",
+  "sourceRoot": "libs/id/api/templates/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/id/api/templates",
+        "tsConfig": "libs/id/api/templates/tsconfig.lib.json",
+        "packageJson": "libs/id/api/templates/package.json",
+        "main": "libs/id/api/templates/src/index.ts",
+        "assets": ["libs/id/api/templates/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/id/api/templates/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/id/api/templates"],
+      "options": {
+        "jestConfig": "libs/id/api/templates/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:id", "side:frontend", "side:backend", "framework:react"]
+}
