@@ -1,14 +1,14 @@
-import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import { SharedUiReact, SharedUiReactProps } from './SharedUiReact';
 
 export default {
   component: SharedUiReact,
   title: 'SharedUiReact',
-};
+} as Meta;
 
-export const primary = () => {
-  /* eslint-disable-next-line */
-  const props: SharedUiReactProps = {};
+const Template: Story<SharedUiReactProps> = (args) => (
+  <SharedUiReact {...args} />
+);
 
-  return <SharedUiReact />;
-};
+export const Primary = Template.bind({});
+Primary.args = {};
