@@ -3,15 +3,33 @@
   "sourceRoot": "libs/id/api/templates/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "tailwind": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx tailwindcss -c libs/id/api/templates/tailwind.config.js -m -o libs/id/api/templates/assets/tailwind.css"
+      }
+    },
+    "compile": {
       "executor": "@nrwl/node:package",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/id/api/templates",
+        "srcRootForCompilationRoot": "libs/id/api/templates/src",
         "tsConfig": "libs/id/api/templates/tsconfig.lib.json",
         "packageJson": "libs/id/api/templates/package.json",
         "main": "libs/id/api/templates/src/index.ts",
-        "assets": ["libs/id/api/templates/*.md"]
+        "assets": ["libs/id/api/templates/assets/*"]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx nx run id-api-templates:tailwind",
+          "npx nx run id-api-templates:compile"
+        ],
+        "parallel": false,
+        "outputPath": "dist/libs/id/api/templates"
       }
     },
     "lint": {

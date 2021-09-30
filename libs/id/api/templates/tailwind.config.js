@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'jit',
-  purge: [],
-  darkMode: 'class', // or 'media' or 'class'
+  purge: ['libs/id/api/templates/src/lib/*.tsx'],
+  darkMode: 'media',
   theme: {
     extend: {},
   },

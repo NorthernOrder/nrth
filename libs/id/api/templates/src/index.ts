@@ -1,1 +1,2 @@
-export * from './lib/id-api-templates';
+export { LoginPage } from './lib/Login';
+export { EmailPage } from './lib/Email';
