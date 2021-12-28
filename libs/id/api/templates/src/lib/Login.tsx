@@ -5,7 +5,7 @@ import { Divider } from './components/Divider';
 import { Html } from './Html';
 import { Layout } from './Layout';
 
-const Login = () => (
+const Login = ({ uid }: { uid: string }) => (
   <Layout title="Login With">
     <div className="mt-4 h-9">
       <Button style="bg-[#5865F2] overflow-none">
@@ -26,7 +26,11 @@ const Login = () => (
       <Divider color="border-white w-full mt-4" />
     </div>
     <div>
-      <form className="flex flex-col gap-2">
+      <form
+        action={`/auth/interaction/${uid}/login`}
+        method="post"
+        className="flex flex-col gap-2"
+      >
         <label htmlFor="email" className="block text-center font-bold w-full">
           Email
         </label>
@@ -44,7 +48,7 @@ const Login = () => (
   </Layout>
 );
 
-export function LoginPage() {
-  const content = renderToString(<Login />);
+export function LoginPage(uid: string) {
+  const content = renderToString(<Login uid={uid} />);
   return Html({ title: 'Login', content });
 }
